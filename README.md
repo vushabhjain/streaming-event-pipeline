@@ -592,9 +592,9 @@ Through this project, the following data engineering concepts are demonstrated:
 
 Data Engineering | Python | SQL | PySpark | Apache Spark | Delta Lake | Docker | Data Pipelines
 
-GitHub: <YOUR_GITHUB_PROFILE>
+GitHub: <https://github.com/vushabhjain/streaming-event-pipeline>
 
-LinkedIn: <YOUR_LINKEDIN_PROFILE>
+LinkedIn: <https://www.linkedin.com/in/vrushabh-awathankar-148b95226>
 
 ---
 

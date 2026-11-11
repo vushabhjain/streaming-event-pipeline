@@ -1,0 +1,24 @@
+services:
+  pipeline:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: spark_streaming_pipeline
+    volumes:
+      - ./:/app
+    environment:
+      - PYTHONUNBUFFERED=1
+      - PYTHONPATH=/app
+    command: python pipeline/stream_engine.py
+
+  generator:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: event_generator
+    volumes:
+      - ./:/app
+    environment:
+      - PYTHONUNBUFFERED=1
+      - PYTHONPATH=/app
+    command: python generator/produce_events.py

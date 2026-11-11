@@ -1,0 +1,21 @@
+# Python & Bytecode
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+
+# Data Lake Storage & Checkpoints (Excluded from git tracking)
+storage/checkpoints/
+storage/landing/*
+storage/silver_transactions/*
+storage/silver_aggregates/*
+storage/quarantine_dlq/*
+storage/pipeline_audit_logs/*
+
+# Preserve empty storage folder layout
+!storage/**/.gitkeep
+
+# macOS & Editor metadata
+.DS_Store
+.vscode/
+.idea/

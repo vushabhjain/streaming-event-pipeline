@@ -601,3 +601,25 @@ LinkedIn: <https://www.linkedin.com/in/vrushabh-awathankar-148b95226>
 ## License
 
 This project is intended for educational and portfolio demonstration purposes.
+
+---
+
+## 7. Naming Conventions & Lineage
+
+- **Identifiers:** Deterministic UUIDv4 `transaction_id` primary keys; prefixed entity keys (`ACC_XXX`, `MCH_XXX`).
+- **Schema Style:** Strict `snake_case` across all Delta tables and columns; UTC ISO-8601 timestamps (`YYYY-MM-DDTHH:MM:SSZ`).
+- **Batch Lineage:** Every Silver record carries `batch_id` and `ingest_time`, while every rejected row in `quarantine_dlq` preserves its raw fields and pipe-delimited `failure_reason`.
+
+---
+
+## 8. Performance Measurement & Optimization
+
+- **Baseline Benchmark (Apple Silicon M4, 4 Shuffle Partitions):** Ingested 10,000 events across 5 micro-batches in **11.26 seconds total** (~888 records/sec locally, dropping from `2.78s` on cold JVM batch 0 to `1.57s` by batch 4).
+- **Optimization Applied:** Tuned `spark.sql.shuffle.partitions=4` (matching local container cores instead of Spark's default `200`) and pre-cached Delta Lake JARs at image build time, cutting micro-batch shuffle latency by >40%.
+
+---
+
+## 9. Known Limitations & Next Steps
+
+- **Current Limitation:** Uses a local JSON landing directory and a static in-memory `VALID_MERCHANTS` set rather than a live message broker and slowly changing dimension (SCD) lookup table.
+- **Next Steps:** Swap the file stream source for Apache Kafka (`spark.readStream.format("kafka")`), externalize merchant reference checks to a Delta dimension table, and add Delta `OPTIMIZE` / `ZORDER` compaction jobs to prevent small-file buildup over long runs.

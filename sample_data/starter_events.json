@@ -1,0 +1,8 @@
+{"transaction_id": "TX_SAMPLE_001", "account_id": "ACC_101", "merchant_id": "MCH_001", "amount": 120.50, "currency": "USD", "event_time": "2026-11-12T10:00:00Z"}
+{"transaction_id": "TX_SAMPLE_002", "account_id": "ACC_102", "merchant_id": "MCH_002", "amount": 45.00, "currency": "USD", "event_time": "2026-11-12T10:01:00Z"}
+{"transaction_id": "TX_SAMPLE_001", "account_id": "ACC_101", "merchant_id": "MCH_001", "amount": 120.50, "currency": "USD", "event_time": "2026-11-12T10:00:00Z"}
+{"transaction_id": null, "account_id": "ACC_103", "merchant_id": "MCH_001", "amount": 89.99, "currency": "USD", "event_time": "2026-11-12T10:02:00Z"}
+{"transaction_id": "TX_SAMPLE_004", "account_id": "ACC_104", "merchant_id": "MCH_003", "amount": -15.00, "currency": "USD", "event_time": "2026-11-12T10:03:00Z"}
+{"transaction_id": "TX_SAMPLE_005", "account_id": "ACC_105", "merchant_id": "UNKNOWN_MCH", "amount": 210.00, "currency": "USD", "event_time": "2026-11-12T10:04:00Z"}
+{"transaction_id": "TX_SAMPLE_006", "account_id": "ACC_106", "merchant_id": "MCH_004", "amount": 75.25, "currency": "USD", "event_time": "INVALID_TS"}
+{"transaction_id": "TX_SAMPLE_007", "account_id": "ACC_107", "merchant_id": "MCH_005", "amount": 330.00, "currency": "USD", "event_time": "2026-11-12T09:15:00Z"}
